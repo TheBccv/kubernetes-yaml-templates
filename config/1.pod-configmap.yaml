@@ -12,6 +12,8 @@ spec:
     - name: test-container
       image: k8s.gcr.io/busybox
       command: [ "/bin/sh", "-c", "ls /etc/config/" ]
+###   
+      
       volumeMounts:
       - name: config-volume
         mountPath: /etc/config
@@ -21,4 +23,6 @@ spec:
         # Provide the name of the ConfigMap containing the files you want
         # to add to the container
         name: special-config
+###
+      
   restartPolicy: Never
